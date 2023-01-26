@@ -15,7 +15,7 @@ function Modal({ children, open, onClose, title }) {
       modal.show();
     }
     modal?.hide();
-  }, [open]);
+  }, [open, modal]);
 
   return (
     <div className="modal fade" tabIndex="-1" ref={modalEl} onClick={onClose}>
