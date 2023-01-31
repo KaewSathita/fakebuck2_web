@@ -1,7 +1,10 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import AuthLayout from "../layouts/auth/AuthLayout";
+import FriendPage from "../pages/FriendPage";
 import LoginPage from "../pages/LoginPage";
-import PostPage from "../pages/PostPage";
+import Postpage from "../pages/PostPage";
+import ProfilePage from "../pages/ProfilePage";
 
 function Router() {
   const { user } = useAuth();
@@ -9,11 +12,16 @@ function Router() {
   return (
     <Routes>
       {user ? (
-        <>
-          <Route path="/" element={<PostPage />} />
-        </>
+        <Route path="/" element={<AuthLayout />}>
+          <Route path="/" element={<Postpage />} />
+          <Route path="/friend" element={<FriendPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+        </Route>
       ) : (
-        <Route path="/" element={<LoginPage />} />
+        <>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </>
       )}
     </Routes>
   );
