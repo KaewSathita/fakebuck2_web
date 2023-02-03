@@ -16,6 +16,7 @@ function Router() {
           <Route path="/" element={<Postpage />} />
           <Route path="/friend" element={<FriendPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Route>
       ) : (
         <>
