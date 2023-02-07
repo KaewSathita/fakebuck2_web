@@ -32,7 +32,10 @@ function ProfileImageForm() {
               </button>
               <button
                 className="btn btn-link text-decoration-none hover-bg-gray-100"
-                onClick={() => setFile(null)}
+                onClick={() => {
+                  setFile(null);
+                  inputEl.current.value = null;
+                }}
               >
                 Cancel
               </button>
