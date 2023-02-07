@@ -1,14 +1,16 @@
-import ProfileCover from "../../route/ProfileCover";
+import ProfileCover from "./ProfileCover";
 import ProfileInfo from "./ProfileInfo";
+import { useParams } from "react-router-dom";
 
 function ProfileContainer() {
+  const { id } = useParams();
   return (
     <div
       className="shadow-sm pb-2"
       style={{ backgroundImage: "linear-gradient(#f0f2f5, #fff)" }}
     >
       <ProfileCover />
-      <ProfileInfo />
+      <ProfileInfo isMe={!id} />
     </div>
   );
 }

@@ -1,4 +1,6 @@
-function ProfileInfo() {
+import ProfileEdit from "./ProfileEdit";
+
+function ProfileInfo({ isMe }) {
   return (
     <div className="d-flex flex-column flex-md-row align-items-center align-items-md-stretch mx-auto px-3 space-x-4 max-w-266">
       <div className="-mt-20 -mt-md-10 z-10">
@@ -63,15 +65,7 @@ function ProfileInfo() {
         </div>
       </div>
 
-      <div className="mb-3 align-self-md-end">
-        <button
-          className="btn btn-gray-200"
-          data-bs-toggle="modal"
-          data-bs-target="#modal-edit-profile"
-        >
-          <i className="fa-solid fa-pen" /> Edit Profile
-        </button>
-      </div>
+      <div className="mb-3 align-self-md-end">{isMe && <ProfileEdit />}</div>
     </div>
   );
 }

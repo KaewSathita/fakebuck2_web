@@ -12,7 +12,7 @@ function Modal({ children, open, onClose, title }) {
 
   useEffect(() => {
     if (open) {
-      modal.show();
+      return modal.show();
     }
     modal?.hide();
   }, [open, modal]);
