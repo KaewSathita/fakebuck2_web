@@ -1,15 +1,15 @@
+import Avatar from "../../components/ui/Avatar";
 import ProfileEdit from "./ProfileEdit";
 
-function ProfileInfo({ isMe }) {
+function ProfileInfo({ isMe, user: { profileImage } }) {
   return (
     <div className="d-flex flex-column flex-md-row align-items-center align-items-md-stretch mx-auto px-3 space-x-4 max-w-266">
       <div className="-mt-20 -mt-md-10 z-10">
-        <img
-          src="https://images.pexels.com/photos/5193860/pexels-photo-5193860.png"
-          className="rounded-circle border border-4 border-white"
-          width="168"
-          height="168"
-          alt="user"
+        <Avatar
+          src={profileImage}
+          size="168"
+          borderSize="4"
+          borderColor="white"
         />
       </div>
 

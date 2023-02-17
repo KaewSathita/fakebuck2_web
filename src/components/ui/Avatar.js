@@ -1,6 +1,9 @@
 import profileImage from "../../assets/images/profile-image.png";
 
-function Avatar({ src, size }) {
+function Avatar({ src, size, borderSize, borderColor }) {
+  const classes = `${borderSize ? "border border-" + borderSize : ""}${
+    borderColor ? " border-" + borderColor : ""
+  }`;
   return (
     <div>
       <img
